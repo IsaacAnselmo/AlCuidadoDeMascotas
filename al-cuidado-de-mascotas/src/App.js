@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './views/Home';
+import CareTakersView from './views/caretakers/ViewCare';
+import CareTakersindex from './views/caretakers/IndexCare';
+import AddPerson from './views/person/AddPerson';
+import Agenda from './components/Agendar';
+import P404 from './views/P404';
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route exact path="/caretakers/view">
+          <CareTakersView></CareTakersView>
+        </Route>
+        <Route exact path="/persons/add">
+          <AddPerson></AddPerson>
+        </Route>
+        <Route exact path="/agendar/add">
+          <Agenda></Agenda>
+        </Route>
+        <Route exact path="*">
+          <P404></P404>
+        </Route>
+      </Switch>
+   </Router>
   );
 }
 
