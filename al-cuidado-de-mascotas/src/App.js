@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './views/Home';
 import CareTakersView from './views/caretakers/ViewCare';
-import CareTakersindex from './views/caretakers/IndexCare';
 import AddPerson from './views/person/AddPerson';
 import Agenda from './components/Agendar';
 import P404 from './views/P404';
