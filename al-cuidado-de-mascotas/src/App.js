@@ -4,6 +4,9 @@ import CareTakersView from './views/caretakers/ViewCare';
 import CareTakersindex from './views/caretakers/IndexCare';
 import AddPerson from './views/person/AddPerson';
 import Agenda from './components/Agendar';
+import P404 from './views/P404';
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +29,9 @@ function App() {
         </Route>
         <Route exact path="/agendar/add">
           <Agenda></Agenda>
+        </Route>
+        <Route exact path="*">
+          <P404></P404>
         </Route>
       </Switch>
    </Router>

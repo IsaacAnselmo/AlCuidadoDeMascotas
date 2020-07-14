@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import { Link,useHistory } from 'react-router-dom';
 import axios from 'axios';
+import Layout from './../../components/Layout';
 
 const Add=()=>{
     return(
-        <div>
+        <Layout>
+            <div >
             <div className="form-group">
                 <label for="exampleInputEmail1">Correo electrónico</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
@@ -36,7 +38,7 @@ const Add=()=>{
             </div>
             <button type="submit" className="btn btn-primary">Inscribirse</button>
         </div>
-
+        </Layout>
     );
 };
 

@@ -3,13 +3,15 @@ import { Link,useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Profile from '../../components/Profile';
 import Dogs from '../../components/Dogs';
+import Layout from './../../components/Layout';
 
 const ViewCare=()=>{
     return(
         <>
-            <Profile></Profile>
-            <Dogs></Dogs>
-
+            <Layout>
+                <Profile></Profile>
+                <Dogs></Dogs>
+            </Layout>
         </>
     );
 

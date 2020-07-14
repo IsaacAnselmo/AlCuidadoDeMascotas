@@ -4,9 +4,11 @@ import axios from 'axios';
 import Card from '../../components/Card';
 import CareTakers from '../../components/CareTakers';
 
+
 const IndexCare=()=>{
     return(
-        <CareTakers></CareTakers>
+            <CareTakers></CareTakers>
+        
     );
 
 };
