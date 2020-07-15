@@ -6,6 +6,7 @@ import CareTakers from '../../components/CareTakers';
 
 
 const IndexCare=()=>{
+    
     return(
             <CareTakers></CareTakers>
         
