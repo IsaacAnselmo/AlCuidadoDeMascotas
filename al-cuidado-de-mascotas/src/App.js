@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './views/Home';
 import CareTakersView from './views/caretakers/ViewCare';
-import AddPerson from './views/person/AddPerson';
+import NewUser from './views/person/AddPerson';
 import Agenda from './components/Agendar';
 import P404 from './views/P404';
 
@@ -23,8 +23,8 @@ function App() {
         <Route exact path="/caretakers/view">
           <CareTakersView></CareTakersView>
         </Route>
-        <Route exact path="/persons/add">
-          <AddPerson></AddPerson>
+        <Route exact path="/persons/signup">
+          <NewUser></NewUser>
         </Route>
         <Route exact path="/agendar/add">
           <Agenda></Agenda>
@@ -33,7 +33,7 @@ function App() {
           <P404></P404>
         </Route>
       </Switch>
-   </Router>
+    </Router>
   );
 }
 

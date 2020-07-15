@@ -40,7 +40,7 @@ const Navbar = ({ title }) => {
                     <input className="form-control mr-sm-2" type="search" placeholder="Usuario" />
                     <input className="form-control mr-sm-2" type="search" placeholder="Contraseña" />
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-                    <Link to={`persons/add`}>
+                    <Link to={`persons/signup`}>
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Registrarse</button>
                     </Link>
                 </form>
