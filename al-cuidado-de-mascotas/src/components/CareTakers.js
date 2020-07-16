@@ -3,17 +3,17 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
-const CareTakers = () => {
-
+const CareTakers = ({id,apellido,nombre,ubicacion,usuario}) => {
+  
   return (
     <>
-      <div className="card" style={{ width: "10rem" }}>
+      <div key={id} className="card" style={{ width: "10rem" }}>
         <img className="card-img-top" src="" alt="Card image cap" />
         <div className="card-body">
-          <h5 className="card-title">Título de la tarjeta</h5>
-          <p className="card-text">Descripción </p>
+          <h5 className="card-title">{`${nombre} ${apellido}`}</h5>
+          <p className="card-text">{`${ubicacion}`} </p>
           {/*<p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>*/}
-          {<Link to={`/caretakers/view`}>
+          {<Link to={`/caretakers/view/${id}`}>
             <button className="btn btn-primary" >Ver perfil</button>
           </Link>}
         </div>
