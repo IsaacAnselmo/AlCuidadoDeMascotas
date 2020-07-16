@@ -3,12 +3,12 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
-const CareTakers = ({id,apellido,nombre,ubicacion,usuario}) => {
+const CareTakers = ({id,apellido,nombre,ubicacion,usuario,imagen}) => {
   
   return (
     <>
       <div key={id} className="card" style={{ width: "10rem" }}>
-        <img className="card-img-top" src="" alt="Card image cap" />
+        <img className="card-img-top" src={imagen} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">{`${nombre} ${apellido}`}</h5>
           <p className="card-text">{`${ubicacion}`} </p>
