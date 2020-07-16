@@ -4,7 +4,7 @@ import axios from 'axios';
 import Card from './Card';
 import CareTakers from './CareTakers';
 
-const Dogs=()=>{
+const Dogs=({mascota})=>{
 
     const getBreeds=()=>{
         //generando un número aleatorio entre 1 y 5 para obtener cuantos perros tendrá el dueño
@@ -25,17 +25,26 @@ const Dogs=()=>{
             });
             
         }
-
-
     }
 
+    const showDogs=()=>{
+        if(mascota!==null){
+            return mascota.map((item)=>
+                <Card edad={item.edad} imagen={item.imagen} nombre={item.nombre} 
+                peso={item.peso} raza={item.raza}>
+                </Card>)    
+        }
+        else{
+
+        }
+    }
 
     return(
         <>
         
         <button type="submit" className="btn btn-primary" onClick={getBreeds}>Agregar mascota</button>
             <h2>Mascotas</h2>
-            <Card></Card>
+            {showDogs()}
         </>
     );
 
