@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import LayoutSesion from './../../components/LayoutSesion';
 
 const EditProfile = () => {
+
+    const { id } = useParams();
+    const history = useHistory();
+
 
     const [edit, SetEdit] = useState({
         nombre: '',
@@ -16,7 +20,7 @@ const EditProfile = () => {
 
     });
 
-        const handleChange = (event) => {
+    const handleChange = (event) => {
         switch (event.target.id) {
             case 'nombre':
                 SetEdit({
@@ -65,34 +69,42 @@ const EditProfile = () => {
     };
 
     const editarPerfil = () => {
-        if (edit.nombre.length > 0 &&
-            edit.apellido.length > 0 &&
-            edit.usuario.length > 0 &&
-            edit.usuario.length > 0 &&
-            edit.password.length > 5 &&
+        if (edit.nombre.length > 0 ||
+            edit.apellido.length > 0 ||
+            edit.usuario.length > 0 ||
+            edit.usuario.length > 0 ||
+            edit.password.length > 5 ||
             edit.ubicacion.length > 0
-            // registro.dob. > 0
+
 
         ) {
-            axios.patch('https://al-cuidado-de-mascotas.firebaseio.com/usuarios.json', edit)
+            axios.patch(`https://al-cuidado-de-mascotas.firebaseio.com/usuarios/${id}.json`, edit)
                 .then((data) => {
-                    alert("Gracias por registrarte! Bienvenido a Al Cuidado de Mascotas!");
-                    window.location.href = "/perfil";
+                    alert('Se guardaron los cambios realizados.');
 
                 })
-                .catch(() => {
-                    alert('Disculpa, hubo un error. Por favor vuelve a intentarlo.')
+                .catch(function (error) {
+                    console.log(error);
                 });
-        } else {
-            alert('No has llenado todos los campos o has llenado de forma incorrecta un campo.')
         }
-
     }
 
+    const deleteUser = () => {
+        axios.delete(`https://al-cuidado-de-mascotas.firebaseio.com/usuarios/${id}.json`)
+            .then(() => {
+                window.confirm('Estas seguro que deseas eliminar la cuenta?')
+                history.push('/');
+            })
+            .catch(({ response }) => {
+                alert(response);
+                history.push('/');
+            });
+    }
 
     return (
         <LayoutSesion>
-            <h4 className="mx-auto">Edita tu Perfil</h4>
+            <h4 className="mx-auto mt-3">Configurar Perfil</h4>
+            <h5>{id}</h5>
             <div >
                 <div className="form-group w-50 mx-auto">
                     <label htmlFor="nombre">Imagen</label>
@@ -134,11 +146,16 @@ const EditProfile = () => {
                     <input type="date" className="form-control" id="dob"
                         value={edit.dob} onChange={handleChange} />
                 </div>
-                <Link to="/caretakers/view">
-                <button type="submit" className="btn btn-primary">Regresar</button>
-                </Link>
-                <button onClick={editarPerfil} type="submit" className="btn btn-primary">Guardar Cambios</button>
-                
+                <div className="d-flex justify-content-around mb-3">
+                    <Link to={`/caretakers/view/${id}`}>
+                        <button type="submit" className="btn btn-primary">Regresar</button>
+                    </Link>
+                    <button onClick={editarPerfil} type="button" className="btn btn-primary">Guardar Cambios</button>
+                    <button onClick={deleteUser} type="button" className="btn btn-danger">Eliminar Cuenta</button>
+
+                </div>
+
+
             </div>
         </LayoutSesion>
     );

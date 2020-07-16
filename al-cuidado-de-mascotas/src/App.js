@@ -11,6 +11,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
+  BrowserRouter
 } from "react-router-dom";
 
 
@@ -30,7 +32,7 @@ function App() {
         <Route exact path="/agendar/add">
           <Agenda></Agenda>
         </Route>
-        <Route exact path="/profile/edit">
+        <Route exact path="/caretakers/view/:id/edit">
           <EditProfile></EditProfile>
         </Route>
         <Route exact path="*">
