@@ -3,6 +3,7 @@ import Home from './views/Home';
 import CareTakersView from './views/caretakers/ViewCare';
 import NewUser from './views/person/AddPerson';
 import Agenda from './components/Agendar';
+import EditProfile from './views/person/EditProfile';
 import P404 from './views/P404';
 
 
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route exact path="/agendar/add">
           <Agenda></Agenda>
+        </Route>
+        <Route exact path="/profile/edit">
+          <EditProfile></EditProfile>
         </Route>
         <Route exact path="*">
           <P404></P404>

@@ -3,7 +3,7 @@ import { Link,useHistory,useParams } from 'react-router-dom';
 import axios from 'axios';
 import Profile from '../../components/Profile';
 import Dogs from '../../components/Dogs';
-import Layout from './../../components/Layout';
+import LayoutSesion from './../../components/LayoutSesion';
 
 const ViewCare=()=>{
 
@@ -35,11 +35,11 @@ const ViewCare=()=>{
 
 
     return(
-        <>{console.log(perro)}
-            <Layout>
+        <>
+            <LayoutSesion>
                 <Profile perfil={usuario}></Profile>
                 <Dogs mascota={perro}></Dogs>
-            </Layout>
+            </LayoutSesion>
         </>
     );
 

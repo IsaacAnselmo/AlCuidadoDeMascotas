@@ -7,7 +7,7 @@ const Profile=({perfil})=>{
         <div className="card mb-3" style={{maxWidth: "540px"}}>
             <div className="row no-gutters">
                 <div className="col-md-4">
-                <img src="..." className="card-img" alt="..."/>
+                <img src="../../public/logo192.png" className="card-img" alt="imagen perfil"/>
                 </div>
                 <div className="col-md-8">
                 <div className="card-body">
