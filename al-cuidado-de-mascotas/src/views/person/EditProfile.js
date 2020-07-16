@@ -8,7 +8,6 @@ const EditProfile = () => {
     const { id } = useParams();
     const history = useHistory();
 
-
     const [edit, SetEdit] = useState({
         nombre: '',
         apellido: '',
@@ -17,7 +16,6 @@ const EditProfile = () => {
         password: '',
         dob: 0,
         ubicacion: '',
-
     });
 
     const handleChange = (event) => {
@@ -90,15 +88,18 @@ const EditProfile = () => {
     }
 
     const deleteUser = () => {
-        axios.delete(`https://al-cuidado-de-mascotas.firebaseio.com/usuarios/${id}.json`)
-            .then(() => {
-                window.confirm('Estas seguro que deseas eliminar la cuenta?')
-                history.push('/');
-            })
-            .catch(({ response }) => {
-                alert(response);
-                history.push('/');
-            });
+        if (!window.confirm('Estas seguro que deseas eliminar la cuenta?')) {
+            return false
+        } else {
+            axios.delete(`https://al-cuidado-de-mascotas.firebaseio.com/usuarios/${id}.json`)
+                .then(() => {
+                    history.push('/');
+                })
+                .catch(({ response }) => {
+                    alert(response);
+                    history.push('/');
+                });
+        }
     }
 
     return (
