@@ -8,7 +8,7 @@ const Card=(mascota)=>{
             <h5 className="card-title">{mascota.nombre}</h5>
             <p className="card-text">{`Raza: ${mascota.raza} Peso:${mascota.peso}`}</p>
             {/*<p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>*/}
-            <button className="btn btn-primary">Buscar reservación</button>
+            
             
           </div>
         </div>

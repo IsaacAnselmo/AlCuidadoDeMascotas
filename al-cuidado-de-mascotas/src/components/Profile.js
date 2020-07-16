@@ -15,8 +15,13 @@ const Profile=({perfil})=>{
                     <p className="card-text">{`${perfil.nombre} ${perfil.apellido}`}</p>
                     <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                 </div>
+                
                 </div>
             </div>
+            
+            <div className="col-md-8">
+                <button className="btn btn-primary">Buscar reservación</button>
+                </div>
         </div>
 
     );
