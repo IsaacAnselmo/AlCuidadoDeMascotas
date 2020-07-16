@@ -33,7 +33,7 @@ const Dogs=()=>{
     return(
         <>
         
-        <button type="submit" className="btn btn-primary" onClick={getBreeds}>Agregar tarea</button>
+        <button type="submit" className="btn btn-primary" onClick={getBreeds}>Agregar mascota</button>
             <h2>Mascotas</h2>
             <Card></Card>
         </>

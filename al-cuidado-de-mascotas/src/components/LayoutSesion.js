@@ -2,7 +2,7 @@ import React from 'react';
 import NavbarSesion from './NavbarSesion';
 import Footer from './Footer';
 
-const Layout = ({ title, children }) => {
+const LayoutSesion = ({ title, children }) => {
     return (
         <div className="container h-100">
             <NavbarSesion title={title} />
@@ -15,4 +15,4 @@ const Layout = ({ title, children }) => {
     );
 }
 
-export default Layout;
+export default LayoutSesion;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return(
-    <footer className="container-fluid bg-primary">
+    <footer className="container-fluid bg-info">
         <div>
         <p>Al Cuidado de los Animales 2020©</p>
         
