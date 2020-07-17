@@ -4,7 +4,7 @@ import axios from 'axios';
 import Agenda from './Agendar';
 
 
-const Profile=({perfil})=>{
+const Profile=({perfil,id})=>{
     const [visibilidad,setVisibilidad]=useState(false);
 
     const estableVisibilidad=()=>
@@ -33,7 +33,7 @@ const Profile=({perfil})=>{
                 </div>
                 
             </div>
-            {visibilidad?<Agenda perfil={perfil}></Agenda>:null}
+            {visibilidad?<Agenda perfil={perfil} id={id}></Agenda>:null}
 
             </>
 

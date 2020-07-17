@@ -109,7 +109,7 @@ const ViewCare = () => {
         <>
             <LayoutSesion>
                
-                <Profile perfil={usuario}></Profile>
+                <Profile perfil={usuario} id={id}></Profile>
 
                 {getDogs()}
                
