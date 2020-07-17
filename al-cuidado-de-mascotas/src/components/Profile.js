@@ -4,7 +4,7 @@ import axios from 'axios';
 import Agenda from './Agendar';
 
 
-const Profile=({perfil})=>{
+const Profile=({perfil,id})=>{
     const [visibilidad,setVisibilidad]=useState(false);
 
     const estableVisibilidad=()=>
@@ -18,6 +18,9 @@ const Profile=({perfil})=>{
                 <div className="row no-gutters">
                     <div className="col-md-4">
                     <img src={perfil.imagen} className="card-img" alt="imagen perfil"/>
+                    <Link to={`/caretakers/edit/${id}`} className="mr-3">
+                    <button type="button" className="btn btn-warning btn-sm" >Editar perfil</button>
+                    </Link>
                     </div>
                     <div className="col-md-8">
                     <div className="card-body">
@@ -33,7 +36,7 @@ const Profile=({perfil})=>{
                 </div>
                 
             </div>
-            {visibilidad?<Agenda perfil={perfil}></Agenda>:null}
+            {visibilidad?<Agenda perfil={perfil} id={id}></Agenda>:null}
 
             </>
 

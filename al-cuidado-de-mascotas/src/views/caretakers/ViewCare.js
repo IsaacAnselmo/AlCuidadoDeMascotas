@@ -106,11 +106,9 @@ const ViewCare = () => {
     return (
         <>
             <LayoutSesion>
-            <div className="d-flex justify-content-between mt-4">
-                <Profile perfil={usuario}></Profile>
-                <Link to={`/caretakers/view/${id}/edit`} className="mr-3">Editar Perfil</Link>
-            </div>
-            <div className="mt-3 mb-4">
+            
+                <Profile perfil={usuario} id={id}></Profile>
+                <div>
                 {getDogs()}
                 </div>
             </LayoutSesion>

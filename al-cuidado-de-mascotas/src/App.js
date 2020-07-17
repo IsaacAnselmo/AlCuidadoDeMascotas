@@ -36,7 +36,7 @@ function App() {
         <Route exact path="/agendar/add">
           <Agenda></Agenda>
         </Route>
-        <Route exact path="/caretakers/view/:id/edit">
+        <Route exact path="/caretakers/edit/:id">
           <EditProfile></EditProfile>
         </Route>
         <Route exact path="*">
