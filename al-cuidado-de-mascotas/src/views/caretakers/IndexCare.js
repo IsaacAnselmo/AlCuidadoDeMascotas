@@ -53,9 +53,9 @@ const IndexCare = () => {
 
 
         return (
-            a1.map((item) =>
+            a1.map((item,index) =>
 
-                <CareTakers id={item[0]} apellido={item[1].apellido} nombre={item[1].nombre}
+                <CareTakers key={index} id={item[0]} apellido={item[1].apellido} nombre={item[1].nombre}
                     ubicacion={item[1].ubicacion} usuario={item[1].usuario} imagen={item[1].imagen}>
 
                 </CareTakers>)
