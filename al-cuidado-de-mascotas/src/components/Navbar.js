@@ -26,7 +26,6 @@ const Navbar = () => {
                     <Link to={`/user`}>
                         <button className="btn btn-secondary mr-sm-2" type="submit">Login</button>
                     </Link>
-
                     <Link to={`/persons/signup`}>
                         <button className="btn btn-secondary mr-sm-2" type="submit">Registrarse</button>
                     </Link>
