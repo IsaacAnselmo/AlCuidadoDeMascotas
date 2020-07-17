@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavbarSesion from './NavbarSesion'
 
 const Navbar = () => {
     return (
@@ -24,7 +23,7 @@ const Navbar = () => {
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Usuario" />
                     <input className="form-control mr-sm-2" type="search" placeholder="Contraseña" />
-                    <Link to={NavbarSesion}>
+                    <Link to={`/user`}>
                         <button className="btn btn-secondary mr-sm-2" type="submit">Login</button>
                     </Link>
 

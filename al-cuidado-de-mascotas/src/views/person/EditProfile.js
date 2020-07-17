@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useForm } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import LayoutSesion from './../../components/LayoutSesion';
@@ -30,21 +30,31 @@ const EditProfile = () => {
             });
     }
 
-    const [edit, SetEdit] = useState({
+    /* const [edit, SetEdit] = useState({
         defaultValues: {
-            nombre: getUser.nombre,
-            apellido: getUser.apellido,
-            usuario: getUser.usuario,
-            email: getUser.email,
-            password: getUser.password,
-            dob: getUser.dob,
-            ubicacion: getUser.ubicacion,
-            esCuidador: getUser.esCuidador,
-            esPropietario: getUser.esPropietario,
-            mascota: getUser.mascota,
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            usuario: usuario.usuario,
+            email: usuario.email,
+            password: usuario.password,
+            dob: usuario.dob,
+            ubicacion: usuario.ubicacion,
+            esCuidador: usuario.esCuidador,
+            esPropietario: usuario.esPropietario,
+            mascota: usuario.mascota,
             metodoPago: "Efectivo"
         }
-    })
+    }) */
+
+    const [edit, SetEdit] = useState({
+        nombre: '',
+        apellido: '',
+        usuario: '',
+        email: '',
+        password: '',
+        dob: '',
+        ubicacion: '',
+    });
 
     const handleChange = (event) => {
         switch (event.target.id) {
