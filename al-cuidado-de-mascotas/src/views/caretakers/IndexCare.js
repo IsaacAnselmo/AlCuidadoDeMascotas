@@ -35,10 +35,10 @@ const IndexCare = () => {
 
         if (!error) {
             const arreglo = Object.entries(care);
-            let a1=arreglo.splice(0,(arreglo.length/2));
-            let a2=arreglo.splice(0,arreglo.length);
+            let a1 = arreglo.splice(0, (arreglo.length / 2));
+            let a2 = arreglo.splice(0, arreglo.length);
 
-            
+
             return showers(a1);
 
         }
@@ -49,8 +49,8 @@ const IndexCare = () => {
 
     }
 
-    const showers=(a1)=>{
-       
+    const showers = (a1) => {
+
 
         return (
             a1.map((item) =>
@@ -67,7 +67,7 @@ const IndexCare = () => {
         <>
             <div className="card-deck">
                 {showTakers()}
-                
+
             </div>
 
         </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import LayoutSesion from './../../components/LayoutSesion';
@@ -7,16 +7,44 @@ const EditProfile = () => {
 
     const { id } = useParams();
     const history = useHistory();
+    const [error, setError] = useState(null);
+    const [usuario, setUsuario] = useState({});
+
+    useEffect(() => {
+        getUser();
+    }, []);
+
+    const getUser = () => {
+        axios.get(`https://al-cuidado-de-mascotas.firebaseio.com/usuarios/${id}.json`)
+            .then(({ data, status }) => {
+                if (data !== null) {
+                    setUsuario(data);
+                    console.log(data)
+                }
+                else {
+                    setError('No existe ese usuario');
+                }
+            })
+            .catch((response) => {
+                setError(response);
+            });
+    }
 
     const [edit, SetEdit] = useState({
-        nombre: '',
-        apellido: '',
-        usuario: '',
-        email: '',
-        password: '',
-        dob: 0,
-        ubicacion: '',
-    });
+        defaultValues: {
+            nombre: getUser.nombre,
+            apellido: getUser.apellido,
+            usuario: getUser.usuario,
+            email: getUser.email,
+            password: getUser.password,
+            dob: getUser.dob,
+            ubicacion: getUser.ubicacion,
+            esCuidador: getUser.esCuidador,
+            esPropietario: getUser.esPropietario,
+            mascota: getUser.mascota,
+            metodoPago: "Efectivo"
+        }
+    })
 
     const handleChange = (event) => {
         switch (event.target.id) {
@@ -108,11 +136,6 @@ const EditProfile = () => {
             <h5>{id}</h5>
             <div >
                 <div className="form-group w-50 mx-auto">
-                    <label htmlFor="nombre">Imagen</label>
-                    <input type="image" className="form-control" id="nombre"
-                        value={edit.nombre} onChange={handleChange} />
-                </div>
-                <div className="form-group w-50 mx-auto">
                     <label htmlFor="nombre">Nombre</label>
                     <input type="text" className="form-control" id="nombre"
                         value={edit.nombre} onChange={handleChange} />
@@ -155,8 +178,6 @@ const EditProfile = () => {
                     <button onClick={deleteUser} type="button" className="btn btn-danger">Eliminar Cuenta</button>
 
                 </div>
-
-
             </div>
         </LayoutSesion>
     );

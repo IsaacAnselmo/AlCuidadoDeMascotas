@@ -17,6 +17,8 @@ const NavbarSesion = () => {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="#">Cuidadores</Link >
+                        {/* <Link to={`/caretakers/view/${id}/edit`} className="nav-link">Editar Perfil</Link> */}
+
                     </li>
                     
                 </ul>
