@@ -23,7 +23,9 @@ const Navbar = () => {
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Usuario" />
                     <input className="form-control mr-sm-2" type="search" placeholder="Contraseña" />
+                    <Link to={`/user`}>
                     <button className="btn btn-secondary" type="submit">Login</button>
+                    </Link>
                     <Link to={`/persons/signup`}>
                         <button className="btn btn-secondary" type="submit">Registrarse</button>
                     </Link>

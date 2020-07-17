@@ -5,6 +5,7 @@ import NewUser from './views/person/AddPerson';
 import Agenda from './components/Agendar';
 import EditProfile from './views/person/EditProfile';
 import P404 from './views/P404';
+import HomeUsuario from './views/HomeUsuario';
 
 
 import {
@@ -22,6 +23,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home></Home>
+        </Route>
+        <Route exact path="/user">
+          <HomeUsuario></HomeUsuario>
         </Route>
         <Route exact path="/caretakers/view/:id">
           <CareTakersView></CareTakersView>

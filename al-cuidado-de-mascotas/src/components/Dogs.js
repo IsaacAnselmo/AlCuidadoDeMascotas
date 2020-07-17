@@ -10,8 +10,8 @@ const Dogs=({mascota})=>{
 
     const showDogs=()=>{
 
-            return mascota.map((item)=>
-                <Card edad={item.edad} imagen={item.imagen} nombre={item.nombre} 
+            return mascota.map((item,index)=>
+                <Card key={index} edad={item.edad} imagen={item.imagen} nombre={item.nombre} 
                 peso={item.peso} raza={item.raza}>
                 </Card>)    
 
