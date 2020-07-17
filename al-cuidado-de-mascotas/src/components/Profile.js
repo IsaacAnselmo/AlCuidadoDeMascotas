@@ -18,6 +18,9 @@ const Profile=({perfil,id})=>{
                 <div className="row no-gutters">
                     <div className="col-md-4">
                     <img src={perfil.imagen} className="card-img" alt="imagen perfil"/>
+                    <Link to={`/caretakers/edit/${id}`} className="mr-3">
+                    <button type="button" className="btn btn-warning btn-sm" >Editar perfil</button>
+                    </Link>
                     </div>
                     <div className="col-md-8">
                     <div className="card-body">
