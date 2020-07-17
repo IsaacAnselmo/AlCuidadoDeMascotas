@@ -143,7 +143,6 @@ const EditProfile = () => {
     return (
         <LayoutSesion>
             <h4 className="mx-auto mt-3">Configurar Perfil</h4>
-            <h5>{id}</h5>
             <div >
                 <div className="form-group w-50 mx-auto">
                     <label htmlFor="nombre">Nombre</label>

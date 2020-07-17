@@ -24,11 +24,7 @@ const Navbar = () => {
                     <input className="form-control mr-sm-2" type="search" placeholder="Usuario" />
                     <input className="form-control mr-sm-2" type="search" placeholder="Contraseña" />
                     <Link to={`/user`}>
-<<<<<<< HEAD
-                        <button className="btn btn-secondary mr-sm-2" type="submit">Login</button>
-=======
-                    <button className="btn btn-secondary" type="submit">Login</button>
->>>>>>> 908d755d06959e997a43d322f3125b79ee031554
+                    <button className="btn btn-secondary mr-sm-2" type="submit">Login</button>
                     </Link>
                     <Link to={`/persons/signup`}>
                         <button className="btn btn-secondary mr-sm-2" type="submit">Registrarse</button>
